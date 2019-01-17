@@ -27,6 +27,7 @@ body{
 #navbar{
 	background-color:#333;
 	color:#fff;
+	overflow:hidden;
 }
 
 #navbar ul{
@@ -36,7 +37,6 @@ body{
 
 #navbar li{
 	display:inline;
-	
 }
 
 #navbar a{
@@ -44,6 +44,10 @@ body{
 	text-decoration: none;
 	font-size:20px;
 	padding-right:15px;
+	margin-left:10px;
+}
+#navbar a:hover{
+	color:coral;
 }
 
 #showcase{
@@ -75,6 +79,23 @@ body{
 	color:#fff;
 	padding:10px;
 	box-sizing: border-box;
+}
+.fix-me{
+	font-size: 15px;
+	border-radius: 25px;
+  	border: 2px solid coral;
+	position:fixed;
+	top:530px;
+	padding: 14px 25px;
+	text-decoration: none;
+	background-color: #333;
+	color:white;
+	text-align: center;
+	display: inline-block;
+}
+ a:hover{
+	color: coral;
+
 }
 
 #main-footer{
