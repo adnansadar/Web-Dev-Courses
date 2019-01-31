@@ -83,15 +83,17 @@ body{
 .fix-me{
 	font-size: 15px;
 	border-radius: 25px;
+
   	border: 2px solid coral;
 	position:fixed;
 	top:530px;
 	padding: 14px 25px;
 	text-decoration: none;
-	background-color: #333;
+	background-color:black;
 	color:white;
 	text-align: center;
 	display: inline-block;
+	transition-duration: 0.5s;
 }
  a:hover{
 	color: coral;
