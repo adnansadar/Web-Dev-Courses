@@ -1,0 +1,47 @@
+body{
+    background-color: black;
+    color: white;
+
+}
+.para{
+    color:red;
+    font-size: 20px;
+    font-family: fantasy;
+    font-weight: bold;
+    font-style: italic;
+    padding-left: 15px;
+    padding-top: 30px;
+    margin: auto;
+    border-bottom: 1px solid white;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    line-height:1.6em;
+}
+
+#mill{
+    color: red;
+}
+.play{
+    color:purple;
+}
+#boy{
+    color: green;
+}
+a:hover
+{
+    color: lightgreen;
+    transition:0.4s
+}
+a{
+    color: darkgreen;
+}
+.Feedback{
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 20px;
+}
+.batimg{
+    border-left: 4px solid white;
+    border-bottom: 4px solid white;
+    border-top: 4px solid white;
+}
