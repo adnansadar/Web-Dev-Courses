@@ -1,10 +1,10 @@
-body{
+body {
     background-color: black;
     color: white;
-
 }
-.para{
-    color:red;
+
+.para {
+    color: red;
     font-size: 20px;
     font-family: fantasy;
     font-weight: bold;
@@ -16,31 +16,36 @@ body{
     margin-top: 10px;
     padding-bottom: 20px;
     text-transform: uppercase;
-    line-height:1.6em;
+    line-height: 1.6em;
 }
 
-#mill{
+#mill {
     color: red;
 }
-.play{
-    color:purple;
+
+.play {
+    color: purple;
 }
-#boy{
+
+#boy {
     color: green;
 }
-a:hover
-{
+
+a:hover {
     color: lightgreen;
-    transition:0.4s
+    transition: 0.4s
 }
-a{
+
+a {
     color: darkgreen;
 }
-.Feedback{
+
+.Feedback {
     padding: 10px 10px 10px 10px;
     margin-bottom: 20px;
 }
-.batimg{
+
+.batimg {
     border-left: 4px solid white;
     border-bottom: 4px solid white;
     border-top: 4px solid white;

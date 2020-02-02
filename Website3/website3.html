@@ -1,0 +1,81 @@
+<html>
+<title> Basic Template</title>
+<head>
+
+<style type="text/css">
+
+body{
+margin:0;
+}
+
+
+#square {
+    margin-left:50%;
+    Height:100px;
+    width:100px;
+    background-color:green;
+}
+
+#circle{
+    margin-left:45%;
+    border-radius:50%;
+    height:20%;
+    width:20%;
+    background-color:yellow;
+
+}
+
+</style>
+</head>
+
+
+<body>
+    <div id="square">
+
+    </div>
+
+    <div id="circle">
+
+    </div>
+<div id="test1">
+    hello
+</div>
+<button id ="toggle1">
+    Square
+</button>
+<button id ="toggle2">
+    Circle
+</button>
+
+<script type="text/javascript">
+//document.getElementById("test1").innerHTML="HI THERE!"+"Welcome";
+//alert("Hi"+5);
+document.getElementById("square").onclick=function()
+{
+    // document.getElementById("test1").innerHTML="You Clicked!"
+    // document.getElementById("test1").style.backgroundColor="red"
+    // document.getElementById("test1").style.color="white"
+    // document.getElementById("toggle").style.backgroundColor="green"
+    // document.getElementById("test1").style.padding="10%"
+    // document.getElementById("test1").style.fontSize="50px"
+    //document.getElementById("test1").style.display="none"//the test1 text goes away
+    document.getElementById("square").style.display="none"
+}
+document.getElementById("circle").onclick=function()
+{
+    document.getElementById("circle").style.display="none"
+
+}
+document.getElementById("toggle1").onclick=function()
+{
+    document.getElementById("square").style.display="block"
+}
+document.getElementById("toggle2").onclick=function()
+{
+    document.getElementById("circle").style.display="block"
+}
+</script>
+
+</body>
+
+</html>
