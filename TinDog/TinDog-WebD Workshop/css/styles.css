@@ -1,0 +1,87 @@
+#title{
+    background-color: #ef1872;
+}
+
+.dbtn1{
+    background-color: white;
+    padding: 10px;
+    font-style: arial;
+    text-transform: uppercase;
+}
+
+.dbtn2{
+    background-color: white;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.rotated{
+    transform: rotate(45deg);
+}
+
+.container-fluid{
+    padding: 5%
+}
+
+.nipun{
+    color: white
+}
+
+h1{
+    font-size: 3rem;
+    line-height: 3rem;
+    color: white;
+    font-weight: bolder;
+}
+p{
+    font-family: Ubuntu;
+}
+#features{
+    padding: 7% 15%;
+}
+
+.feature-box{
+    text-align: center;
+    padding: 5%;
+}
+
+.icon{
+    color: #ef1872;
+    padding-bottom: 20px;
+}
+
+.icon:hover{
+    color: #8f8f8f;
+}
+
+#fire{
+        color:orange;
+}
+
+#money{
+    color: green;
+}
+
+#testimonials{
+    padding: 7% 15%;
+    text-align: center;
+    background-color: #ef1872;
+    color: #fff;
+}
+
+.test-image{
+    border-radius: 100%;
+    margin: 20px;
+    width:20%;
+}
+
+#press{
+    background-color: #ef1872;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.press-logo{
+    width:15%;
+    margin: 20px 20px 20px 50px;
+}
