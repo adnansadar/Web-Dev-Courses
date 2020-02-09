@@ -1,0 +1,11 @@
+variable: $varname = 20;
+function declaration: function sum($var1,$var2)
+function call: $sum=sum($var1,$var2);
+Array var1: $var1 = array(18,12);
+$sum = $var1[0]+$var1[1];
+used to print associative array( like dictionary): print_r();
+for 2D arrays: array(array(1,12),array(1,2));
+method = GET used in html form: in php echo $_GET["name"]; echo $_GET["email"]
+post: hides your data from the URL
+mysqli_connect("servername","username","password","databasename") or die(mysqli_error($con));
+
