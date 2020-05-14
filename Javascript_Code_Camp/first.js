@@ -52,3 +52,67 @@ console.log(wordBlanks("dog", "big", "ran", "quickly"));
 //Arrays
 myArr= ["Hello", 1];
 console.log(myArr);
+//Array indexes can be modified later on
+//push an item
+myArr.push("yo");
+//pop function
+myArr.pop()
+//shift function: Removes 1st element from an Array
+var removedArr = myArr.shift();
+//unshift Function: Adds to the beginning
+ myArray.unshift("hello");
+
+ //Functions
+ function fun1(a,b){ //notice that no data type is defined
+   console.log(a-b);
+ }
+
+ fun1(10,5);
+
+ //Local and global variables
+ var myGlobal = 10; //Global variable
+
+ function fun1(){
+   oopsGlobal = 5; // this is also a global variable as it doesnt have any datatype assigned.
+ }
+
+ function fun2() {
+   var output = "";
+   if (typeof myGlobal != "undefined"){
+     output += "myGlobal" + myGlobal +"\n" ;
+   }
+   if (typeof oopsGlobal != "undefined"){
+     output += "oopsGlobal" + oopsGlobal+ "\n";
+   }
+   console.log(output);
+ }
+ fun1();
+ fun2();
+ //if 2 variables have the same name then the local variable takes precedence when the fuction is called.
+ //Array to String
+ var testArr = [1,2,3,4,5];
+ console.log("String: " + JSON.stringify(testArr));
+ // 3==='3' checks datatype too while comparing
+ // 10 !== 17 strict inequality
+ //if, elseif, else, &&, ||
+ //switch case similar to C
+
+ //Multiple identical opions in switch case
+ function seqsizes(val){
+   answer = "";
+ switch(val){
+ case 1:
+ case 2:
+ case 3:
+ answer = "low";
+ break;
+ break;
+ case 4:
+ case 5:
+ case 6:
+ answer = "mid";
+ break;
+}
+return answer;
+}
+console.log(seqsizes(2));
