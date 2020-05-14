@@ -116,3 +116,20 @@ var removedArr = myArr.shift();
 return answer;
 }
 console.log(seqsizes(2));
+
+//Objects
+var ourDog = {
+  "name": "Tuffy",//property:value
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everyone"]
+};//remember the semi colon sign
+var nameval = ourDog.name; //Tuffy
+var namevalue = ourDog["name"]; //Tuffy
+ourDog.name = "Feedo"; //Changing value of an object
+ourDog.bark = "bow-wow"; //adding a property bark having value "bow-wow" to the object
+ourDog['sound'] = "woof";
+delete ourDog.tails;//delete property
+//Objects can be used instead of switch case
+var check = ourDog.hasOwnProperty("eyes");//False
+//Multiple Objects can be added inside an array
