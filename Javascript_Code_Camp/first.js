@@ -262,10 +262,69 @@ console.log(myConcat([1,2],[3,4,5]));
 
 //finding nos in the array that are >0 and integers and return product of that no
 const realNumberArray = [4,5.6,-9.8,3.14,42,6,8.34,-20];
-const squareList = (arr) => { //Arrow function
+const squareList = (arr) => { //Passes the array as input
   const squareIntegers = arr.filter(num => Number.isInteger(num) && num>0).map(x => x*x)
   return squareIntegers;
 };
 
 const squareIntegers = squareList(realNumberArray);
 console.log(squareIntegers);
+
+//Higher order arrow Functions
+const increment = (function(){
+  return function increment(number,value=1){
+    return number + value;
+  };
+})();
+console.log(increment(5,2));
+console.log(increment(5));
+
+const sum = (function(){
+  return function sum(x,y,z){
+    const args = [x,y,z];
+    return args.reduce((a,b) => a+b,0);//sums up and returns the result, gives 6
+  };
+})();
+console.log(sum(1,2,3));
+
+//same function using rest operator
+const sum = (function(){
+  return function sum(...args){ //can take in any no of arguments into args array
+    //const args = [x,y,z];
+    return args.reduce((a,b) => a+b,0);//sums up and returns the result, gives 6
+  };
+})();
+console.log(sum(1,2,3,4));
+
+//spread operator
+//it spreads out contents of one array into the other and it will not be equal to it. Just creates a copy of the array.
+const arr1 = ['jan','feb','mar','apr'];
+let arr2;
+(function() {
+  arr2 = [...arr1];//spread operator
+  arr1[0] = 'potato'
+})();
+console.log(arr2);
+
+//Destructuring assignment to assign variable from objects
+var vowel = {x:3.6,y:7.4,z:6.5};
+/*var a = vowel.x
+var b = vowel.y
+var c = vowel.z
+*/
+
+const {x:a,y:b,z:c} = vowel;//a= 3.6..... Destructuring
+
+//Nested
+const LOCAL_FORECAST
+= {
+  today: { min:72, max:83},
+  tomorrow: { min: 73.3, max: 84.6}
+};
+
+function getMaxOfTmrw(forecast){
+  "use strict";
+  const { tomorrow: {max: maxOfTomorrow}} = forecast;
+  return maxOfTomorrow;
+}
+console.log(getMaxOfTmrw(LOCAL_FORECAST));//84.6
