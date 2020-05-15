@@ -197,3 +197,75 @@ function checksign(num) {
 	return num>0 ? "positive" : num<0 ? "negative" : "zero"
 }
 console.log(checksign(10));
+
+//let and set
+let catname = "Quincy";
+catname = "Beau"//Correct way to change let by using set
+
+// "use strict": this is typed at the start of JS file to catch common coding errors like variable not initialized.
+
+//Use let mostly in the code as var has a global scope within a program.
+//let has local scope as it is limited to a function
+function checkscope(){
+  "use strict";
+  let i = "function scope";
+  if(true){
+      let i = "block scope";
+      console.log("block scope i is ",i);
+    }
+    console.log("function scope i is ", i);
+    return i;
+}
+checkscope();
+
+//If you never want to reassign a variable, use const
+const SENT = "this is amazing";
+//const sent = "wow"; this will give an error
+console.log(SENT);
+
+//Array indices or objects can be modified
+//GIVING ERROR
+const s = [5,6,1];
+function edit() {
+  "use strict";
+  s[0]=9;
+  s[1]=0;
+  s[2]=1;
+}
+edit();
+console.log(s);
+
+function freezeObj(){
+  "use strict";
+  const MATH_CONSTANTS = {
+    PI : 3.14
+  };
+  Object.freeze(MATH_CONSTANTS);//value of objects remains fixed now.
+
+  try {
+    MATH_CONSTANTS.PI = 99;
+  } catch (e) {
+    console.log(e);
+  }
+  return MATH_CONSTANTS.PI;
+}
+
+const PI = freezeObj();
+
+//arrow function
+// var magic = function(){
+//   return new Date();
+// };
+const MAGIC = () => new Date();//this is an arrow function
+const myConcat = (arr1,arr2) => arr1.concat(arr2);// passing arr1 and arr2 as arguments and returns arr1.concat(arr2)
+console.log(myConcat([1,2],[3,4,5]));
+
+//finding nos in the array that are >0 and integers and return product of that no
+const realNumberArray = [4,5.6,-9.8,3.14,42,6,8.34,-20];
+const squareList = (arr) => { //Arrow function
+  const squareIntegers = arr.filter(num => Number.isInteger(num) && num>0).map(x => x*x)
+  return squareIntegers;
+};
+
+const squareIntegers = squareList(realNumberArray);
+console.log(squareIntegers);
