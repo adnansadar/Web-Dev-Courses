@@ -133,3 +133,67 @@ delete ourDog.tails;//delete property
 //Objects can be used instead of switch case
 var check = ourDog.hasOwnProperty("eyes");//False
 //Multiple Objects can be added inside an array
+
+var myStorage = {// Nested Object
+	"car":{
+		"inside": {
+			"glove box": "maps",
+			"passenger seat": "crumbs"
+		},
+		"outside": {
+			"trunk": "jack"
+		}
+	}
+};
+
+var gloveBox = myStorage.car.inside["glove box"];//maps
+var gloveBox2 = myStorage[0].inside[0];
+console.log(gloveBox)
+console.log(gloveBox2)
+
+//Loops
+var myArray = [];
+var i = 0;
+while(i<6){
+	myArray.push(i);
+	i++;
+}
+console.log(myArray);//1,2,3,4
+//Loops similar to C Language
+//Nested Loops
+function multiplyAll(arr) {
+	var product = 1;
+	for (var i = 0; i < arr.length; i++) {
+		for (var j = 0; j < arr[j].length; j++) {
+				product *= arr[i][j];
+		}
+	}
+	return product;
+}
+var product = multiplyAll([1,2],[3,4],[5,6,7]);
+console.log(product);
+//Math.random() : 0<return<1
+//Math.floor()
+// Random nos within a range
+function randrange(min,max) {
+	// body...
+	return Math.floor(Math.random()*(max-min +1))* min;
+}
+randrange(1,9)
+console.log()
+//parseInt(str) Integer to string
+//parseInt(str,2) radix=2 it is a binary no by dafault its 10, here str=11001 for ex
+//ternary operator
+a=10;
+b=10;
+var check(){
+return a===b ? true:false
+}
+var check2= check();
+console.log(check2);
+
+function checksign(num) {
+	// body...
+	return num>0 ? "positive" : num<0 ? "negative" : "zero"
+}
+console.log(checksign(10));
