@@ -328,3 +328,97 @@ function getMaxOfTmrw(forecast){
   return maxOfTomorrow;
 }
 console.log(getMaxOfTmrw(LOCAL_FORECAST));//84.6
+
+//Pass an object as function's parameters
+//Used with API calls when a lot of information is received from a request
+//Normal function
+const stats = {
+	max: 56.78,
+	standard_deviation:4.34,
+	median:34.5,
+	mode:23.8
+};
+const half =(function()){
+	return function half(stats){
+		return(stats.max + stats.min)/2.0;
+	};
+})();
+console.log(stats);
+console.log(half(stats));
+
+//Better way
+const stats = {
+	max: 56.78,
+	standard_deviation:4.34,
+	median:34.5,
+	mode:23.8
+};
+const half =(function()){
+	return function half({max,min}){//the whole object need not be passed
+		return(max + min)/2.0;
+	};
+})();
+console.log(stats);
+console.log(half(stats));
+
+const person = {
+	name: "Adnan Sadar",
+	age: 20
+};
+
+//``=Template literal supports multi-line strings, use of objects directly and use of" " ' ' without escape
+const greeting = `Hello! My name is ${person.name}!
+I am  ${person.age} years old. `;
+console.log(greeting);
+
+
+const result = {
+	success:["max","no-amd"],
+	failure:["min","amd"]
+};
+function makeList(arr){
+	const resultDisplayArray = [];
+	for(let i=0;i<arr.lenght;i++){
+		resultDisplayArray.push(`<li class= "text warning"> ${arr[i]}</li> `)
+	}
+	return resultDisplayArray;
+}
+const resultDisplayArray = makeList(result.failure);
+console.log(resultDisplayArray)//min amd
+
+const createPerson = (name,age,gender) =>{
+	return{
+		name:name,
+		age:age,
+		gender:gender
+	};
+};
+console.log(createPerson("Adnan Sadar",56,"male"));
+
+//Better way to create objects use if name:name and so on
+const createPerson = (name,age,gender) =>({name,age,gender});
+console.log(createPerson("Adnan Sadar",56,"male"));
+
+//Better way for functions
+const bicycle = {
+	gear:2,
+	setGear:function(newGear){
+		"use strict";
+		this.gear = newGear;
+	}
+};
+
+bicycle.setGear(3);
+console.log(bicycle.gear);//3
+
+//2nd way
+const bicycle = {
+	gear:2,
+	setGear:(newGear){
+		"use strict";
+		this.gear = newGear;
+	}
+};
+
+bicycle.setGear(3);
+console.log(bicycle.gear);//3
