@@ -422,3 +422,43 @@ const bicycle = {
 
 bicycle.setGear(3);
 console.log(bicycle.gear);//3
+
+//Constructors
+// var spaceShuttle = function(targetPlanet){//Constructor function
+//   this.targetPlanet = targetPlanet;
+// }
+// var zeus = new spaceShuttle('Jupiter');//spaceShuttle object
+// console.log(zeus.targetPlanet);
+
+//using class syntax
+class spaceShuttle{
+  constructor(targetPlanet){
+    this.targetPlanet = targetPlanet;
+  }
+}
+var zeus = new spaceShuttle('Jupiter');
+console.log(zeus.targetPlanet);
+
+//Setters and Getters
+
+function makeClass() {
+  class Thermostat {
+    constructor(temp) {
+      this._temp = 5/9 * (temp-32);
+    }
+    get temperature(){
+      return this._temp;
+    }
+    set temperature(updatedTemp){
+      this._temp = updatedTemp;
+    }
+  }
+  return Thermostat;
+}
+
+const Thermostat = makeClass();
+const thermos = new Thermostat(76);//pass 76 to constructor
+let temp = thermos.temperature;//no parenthesis remember
+thermos.temperature = 26;
+temp = thermos.temperature;
+console.log(temp);
