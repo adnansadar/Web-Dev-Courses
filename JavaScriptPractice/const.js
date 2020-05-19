@@ -1,3 +1,5 @@
+//HackerRank Day 1 let and const
+
 'use strict';
 
 process.stdin.resume();

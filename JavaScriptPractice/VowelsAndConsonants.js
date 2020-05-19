@@ -1,3 +1,5 @@
+//HackerRank Day 2 Loops
+
 function vowelsAndConsonants(s) {
     const vowels = 'aeiou';
     var consonants = '';

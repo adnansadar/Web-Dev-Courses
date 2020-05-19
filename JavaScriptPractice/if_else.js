@@ -1,4 +1,4 @@
-//HackerRank Day 1 Functions
+//HackerRank Day 2 if-else
 
 'use strict';
 
@@ -23,19 +23,16 @@ process.stdin.on('end', _ => {
 function readLine() {
     return inputString[currentLine++];
 }
-/*
- * Create the function factorial here
- */
-function factorial(n){
-       if(n==0)
-         return 1;
-       else
-       return (n*factorial(n-1));
-}
 
-
-function main() {
-    const n = +(readLine());
+function getGrade(score) {
+    let grade;
+    if(score>25 && score<=30){ grade = 'A';}
+    else if (score>20 && score<=25) {grade = 'B';}
+    else if (score>15 && score<=20) {grade = 'C';}
+    else if (score>10 && score<=15) {grade = 'D';}
+    else if (score>5 && score<=10) {grade = 'E';}
+    else  grade = 'F';
     
-    console.log(factorial(n));
+    return grade;
 }
+
