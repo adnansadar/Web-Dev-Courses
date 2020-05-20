@@ -1,4 +1,4 @@
-//HackerRank Day3 Arrays
+//HackerRank Day 3 Arrays
 'use strict';
 
 process.stdin.resume();
