@@ -56,4 +56,44 @@ increase(obj);//address is passed in this case so value increments
 console.log(obj);
 
 
+if('radius' in circle)
+console.log("Circle has a radius.");
 
+//Abstraction
+//use let inside a function to declare objects,variable... instead of using "this" as it can be accessed globally then.
+//let assigns it as a local variable with limited scope(within a function)
+//Closure property function within a function can access its variables and methods
+
+//If that method is needed to be accessed outside, then use "this" to create a new function which returns the private method/variable
+
+function Circle(radius){
+	this.radius = radius;
+	let defaultLocation = {x:0,y:0};//private object
+	this.getDefaultLocation = function(){
+		return defaultLocation;//accessing the private object
+	};
+
+	this.draw = function(){
+		console.log('draw');
+	};
+
+
+const circle = new Circle(10);
+circle.draw();
+
+//getters and setters
+Object.defineProperty(this,'defaultLocation',{//used to define getters and setters
+	get: function(){//getter
+		return defaultLocation;
+	},
+	set: function(value){//setter
+		if(!value.x || !value.y)
+			throw new Error('Invalid Location.')
+		defaultLocation = value;
+	}
+});
+}
+
+const circle = new Circle(10);
+circle.defaultLocation = 1;
+circle.draw();
