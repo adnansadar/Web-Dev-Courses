@@ -263,8 +263,9 @@ console.log(myConcat([1,2],[3,4,5]));
 //finding nos in the array that are >0 and integers and return product of that no
 const realNumberArray = [4,5.6,-9.8,3.14,42,6,8.34,-20];
 const squareList = (arr) => { //Passes the array as input
+  //The filter() method creates an array filled with all array elements that pass a test (provided as a function).
   const squareIntegers = arr.filter(num => Number.isInteger(num) && num>0).map(x => x*x)
-  return squareIntegers;
+  return squareIntegers;//The map() method creates a new array with the results of calling a function for every array element.
 };
 
 const squareIntegers = squareList(realNumberArray);
@@ -283,6 +284,7 @@ const sum = (function(){
   return function sum(x,y,z){
     const args = [x,y,z];
     return args.reduce((a,b) => a+b,0);//sums up and returns the result, gives 6
+    //The reduce() method reduces the array to a single value.
   };
 })();
 console.log(sum(1,2,3));
