@@ -76,3 +76,51 @@ for (var i = 0; i < odd.length; i++) {
   odd[i].style.backgroundColor = '#f4f4f4'//grey color
   even[i].style.backgroundColor = '#ccc';//dark grey
 }
+
+//Traversing the DOM
+
+//parentNode/parentElement
+var itemList = document.querySelector('#items');
+//console.log(itemList.parentNode);
+//div is the parent of ul, input and form are siblings.
+
+itemList.parentNode.style.backgroundColor = '#f4f4f4';
+//console.log(itemList.parentNode.parentNode);//container
+
+//children
+console.log(itemList.children);
+console.log(itemList.children[1]);
+itemList.children[1].style.backgroundColor = 'yellow';
+
+//firstElementChild
+console.log(itemList.firstElementChild);
+
+//lastElementChild
+console.log(itemList.lastElementChild);
+
+//nextElementSibling
+console.log(itemList.nextElementSibling);
+
+//previousElementSibling
+console.log(itemList.parentElementSibling);
+itemList.previousElementSibling.style.color = 'green';
+
+var newDiv = document.createElement('div');
+newDiv.className = 'Hello';
+console.log(newDiv);
+
+newDiv.id = 'hello1';
+
+//Add attr
+newDiv.setAttribute('title','Hello Div')
+
+//Create text node(to add content inside the div)
+var newDivText = document.createTextNode('Hello World');
+
+//Add text to div
+newDiv.appendChild(newDivText);
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+console.log(newDiv);
+container.insertBefore(newDiv,h1);
