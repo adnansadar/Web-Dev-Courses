@@ -124,3 +124,31 @@ var container = document.querySelector('header .container');
 var h1 = document.querySelector('header h1');
 console.log(newDiv);
 container.insertBefore(newDiv,h1);
+
+//Event Listener
+var button = document.getElementById('button').addEventListener('click',buttonClick
+);
+
+function buttonClick(e){
+   //alert('You Clicked');
+   //document.getElementById('header-title').textContent = 'Changed';
+  // document.querySelector('#main').style.backgroundColor = 'green';
+  //Alternate way of doing it
+  //document.getElementById('main').style.backgroundColor = 'green';
+
+  // console.log(e.target);
+  // console.log(e.target.id);
+  // console.log(e.target.className);
+  // console.log(e.target.classList);
+  // var output = document.getElementById('output');
+  // output.innerHTML = '<h3>'+e.target.id+'</h3';
+  // console.log(e.type);//click
+  // console.log(e.clientX);//mouse click x axis from the full window
+  // console.log(e.offsetX);
+  // console.log(e.offsetY);
+  
+  
+  
+}
+
+
