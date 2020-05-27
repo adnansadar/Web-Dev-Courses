@@ -1,154 +1,242 @@
-//Examine the document object
-//console.dir(document);
-// console.log(document.domain);//127.0.0.1
+// EXAMINE THE DOCUMENT OBJECT //
+
+// console.dir(document);
+// console.log(document.domain);
 // console.log(document.URL);
-// console.log(document.title);//Item Lister
-// //document.title = 123;
+// console.log(document.title);
+// //document.title =  123;
 // console.log(document.doctype);
 // console.log(document.head);
 // console.log(document.body);
-// console.log(document.all);//gives output of full html doc as an array
-// console.log(document.all[10]);//gets the 10th element
-// console.log(document.forms);
+// console.log(document.all);
+// console.log(document.all[10]);
+// // document.all[10].textContent = 'Hello';
+// console.log(document.forms[0]);
 // console.log(document.links);
 // console.log(document.images);
 
-//getElementById
+// GETELEMENTBYID //
+// console.log(document.getElementById('header-title'));
 // var headerTitle = document.getElementById('header-title');
 // var header = document.getElementById('main-header');
-//console.log(headerTitle);
+// console.log(headerTitle);
 // headerTitle.textContent = 'Hello';
-// headerTitle.innerText = 'Goodbye';//pays attention to the style of the tag used
+// headerTitle.innerText = 'Goodbye';
 // console.log(headerTitle.innerText);
 // headerTitle.innerHTML = '<h3>Hello</h3>';
 // header.style.borderBottom = 'solid 3px #000';
 
-//GETELEMENTSBYCLASSNAME
-//Can be used with list items
+// GETELEMENTSBYCLASSNAME //
 // var items = document.getElementsByClassName('list-group-item');
 // console.log(items);
 // console.log(items[1]);
-// items[1].textContent = 'Hello';
+// items[1].textContent = 'Hello 2';
 // items[1].style.fontWeight = 'bold';
 // items[1].style.backgroundColor = 'yellow';
 
-//getElementsByTagName
-//var li = document.getElementsByTagName('li');//applies to all tags even though they dont have same class name
+// // Gives error
+// //items.style.backgroundColor = '#f4f4f4';
+
+// for(var i = 0; i < items.length; i++){
+//   items[i].style.backgroundColor = '#f4f4f4';
+// }
+
+// GETELEMENTSBYTAGNAME //
+// var li = document.getElementsByTagName('li');
 // console.log(li);
 // console.log(li[1]);
-// li[1].textContent = 'Hello';
+// li[1].textContent = 'Hello 2';
 // li[1].style.fontWeight = 'bold';
 // li[1].style.backgroundColor = 'yellow';
 
-//For applying to multiple items, we have to traverse it using a for loop as it is an array of items
-// for (var i = 0; i < li.length; i++) {
+// // Gives error
+// //items.style.backgroundColor = '#f4f4f4';
+
+// for(var i = 0; i < li.length; i++){
 //   li[i].style.backgroundColor = '#f4f4f4';
 // }
 
-//querySelector
-var header = document.querySelector('#main-header');
-header.style.borderBottom = 'solid 4px black';
+// QUERYSELECTOR //
+// var header = document.querySelector('#main-header');
+// header.style.borderBottom = 'solid 4px #ccc';
 
-var input = document.querySelector('input');
-input.value = 'Hello World';
+// var input = document.querySelector('input');
+// input.value = 'Hello World'
 
-var submit = document.querySelector('input[type="submit"]');
-submit.value = "Send";
+// var submit = document.querySelector('input[type="submit"]');
+// submit.value="SEND"
 
-var item = document.querySelector('.list-group-item');
-item.style.color = 'blue';//by default this applies to the first item in the list.
+// var item = document.querySelector('.list-group-item');
+// item.style.color = 'red';
 
-var lastItem = document.querySelector('.list-group-item:last-child');
-lastItem.style.color = 'red';
+// var lastItem = document.querySelector('.list-group-item:last-child');
+// lastItem.style.color = 'blue';
 
-var secondItem = document.querySelector('.list-group-item:nth-child(2)');
-secondItem.style.color = 'green';
+// var secondItem = document.querySelector('.list-group-item:nth-child(2)');
+// secondItem.style.color = 'coral';
 
-//querySelectorAll
-var titles = document.querySelectorAll('.title');
-console.log(titles);
-titles[1].textContent = 'Hello';
+// QUERYSELECTORALL //
+// var titles = document.querySelectorAll('.title');
 
-var odd = document.querySelectorAll('li:nth-child(odd)');
-var even = document.querySelectorAll('li:nth-child(even)');
+// console.log(titles);
+// titles[0].textContent = 'Hello';
 
-for (var i = 0; i < odd.length; i++) {
-  odd[i].style.backgroundColor = '#f4f4f4'//grey color
-  even[i].style.backgroundColor = '#ccc';//dark grey
-}
+// var odd = document.querySelectorAll('li:nth-child(odd)');
+// var even= document.querySelectorAll('li:nth-child(even)');
 
-//Traversing the DOM
+// for(var i = 0; i < odd.length; i++){
+//   odd[i].style.backgroundColor = '#f4f4f4';
+//   even[i].style.backgroundColor = '#ccc';
+// }
 
-//parentNode/parentElement
+
+
+// TRAVERSING THE DOM //
 var itemList = document.querySelector('#items');
-//console.log(itemList.parentNode);
-//div is the parent of ul, input and form are siblings.
+// parentNode
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor = '#f4f4f4';
+// console.log(itemList.parentNode.parentNode.parentNode);
 
-itemList.parentNode.style.backgroundColor = '#f4f4f4';
-//console.log(itemList.parentNode.parentNode);//container
+// parentElement
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.backgroundColor = '#f4f4f4';
+// console.log(itemList.parentElement.parentElement.parentElement);
 
-//children
-console.log(itemList.children);
-console.log(itemList.children[1]);
-itemList.children[1].style.backgroundColor = 'yellow';
+// childNodes
+// console.log(itemList.childNodes);
 
-//firstElementChild
-console.log(itemList.firstElementChild);
+// console.log(itemList.children);
+// console.log(itemList.children[1]);
+// itemList.children[1].style.backgroundColor = 'yellow';
 
-//lastElementChild
-console.log(itemList.lastElementChild);
+// // FirstChild
+// console.log(itemList.firstChild);
+// // firstElementChild
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent = 'Hello 1';
 
-//nextElementSibling
-console.log(itemList.nextElementSibling);
 
-//previousElementSibling
-console.log(itemList.parentElementSibling);
-itemList.previousElementSibling.style.color = 'green';
+// lastChild
+// console.log(itemList.lastChild);
+// lastElementChild
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent = 'Hello 4';
 
-var newDiv = document.createElement('div');
-newDiv.className = 'Hello';
-console.log(newDiv);
+// nextSibling
+// console.log(itemList.nextSibling);
+// // nextElementSibling
+// console.log(itemList.nextElementSibling);
 
-newDiv.id = 'hello1';
+// previousSibling
+// console.log(itemList.previousSibling);
+// previousElementSibling
+// console.log(itemList.previousElementSibling);itemList.previousElementSibling.style.color = 'green';
 
-//Add attr
-newDiv.setAttribute('title','Hello Div')
+// createElement
 
-//Create text node(to add content inside the div)
-var newDivText = document.createTextNode('Hello World');
+// // Create a div
+// var newDiv =  document.createElement('div');
 
-//Add text to div
-newDiv.appendChild(newDivText);
+// // Add class
+// newDiv.className= 'hello';
 
-var container = document.querySelector('header .container');
-var h1 = document.querySelector('header h1');
-console.log(newDiv);
-container.insertBefore(newDiv,h1);
+// // Add id
+// newDiv.id = 'hello1';
 
-//Event Listener
-var button = document.getElementById('button').addEventListener('click',buttonClick
-);
+// // Add attr
+// newDiv.setAttribute('title', 'Hello Div');
 
-function buttonClick(e){
-   //alert('You Clicked');
-   //document.getElementById('header-title').textContent = 'Changed';
-  // document.querySelector('#main').style.backgroundColor = 'green';
-  //Alternate way of doing it
-  //document.getElementById('main').style.backgroundColor = 'green';
+// // Create text node
+// var newDivText = document.createTextNode('Hello World');
 
-  // console.log(e.target);
-  // console.log(e.target.id);
-  // console.log(e.target.className);
-  // console.log(e.target.classList);
-  // var output = document.getElementById('output');
-  // output.innerHTML = '<h3>'+e.target.id+'</h3';
-  // console.log(e.type);//click
-  // console.log(e.clientX);//mouse click x axis from the full window
-  // console.log(e.offsetX);
-  // console.log(e.offsetY);
-  
-  
-  
+// // Add text to div
+// newDiv.appendChild(newDivText);
+
+// var container = document.querySelector('header .container');
+// var h1 = document.querySelector('header h1');
+
+// console.log(newDiv);
+
+// newDiv.style.fontSize = '30px';
+
+// container.insertBefore(newDiv, h1);
+
+// EVENTS //
+
+// var button = document.getElementById('button').addEventListener('click', buttonClick);
+
+// function buttonClick(e){
+//   //console.log('Button clicked');
+//   // document.getElementById('header-title').textContent = 'Changed';
+//   // document.querySelector('#main').style.backgroundColor = '#f4f4f4';
+//   //console.log(e);
+
+//   // console.log(e.target);
+//   // console.log(e.target.id);
+//   // console.log(e.target.className);
+//   // console.log(e.target.classList);
+//   // var output = document.getElementById('output');
+//   // output.innerHTML = '<h3>'+e.target.id+'</h3>';
+
+//   // console.log(e.type);
+
+//   //console.log(e.clientX);
+//   //console.log(e.clientY);
+
+//   //console.log(e.offsetX);
+//   //console.log(e.offsetY);
+
+//   // console.log(e.altKey);
+//   // console.log(e.ctrlKey);
+//   // console.log(e.shiftKey);
+// }
+
+var button = document.getElementById('button');
+var box = document.getElementById('box');
+
+//button.addEventListener('click', runEvent);
+//button.addEventListener('dblclick', runEvent);
+//button.addEventListener('mousedown', runEvent);
+//button.addEventListener('mouseup', runEvent);
+
+//box.addEventListener('mouseenter', runEvent);
+//box.addEventListener('mouseleave', runEvent);
+
+//box.addEventListener('mouseover', runEvent);
+//box.addEventListener('mouseout', runEvent);
+
+// box.addEventListener('mousemove', runEvent);
+
+var itemInput = document.querySelector('input[type="text"]');
+var form = document.querySelector('form');
+var select = document.querySelector('select');
+
+// itemInput.addEventListener('keydown', runEvent);
+// itemInput.addEventListener('keyup', runEvent);
+// itemInput.addEventListener('keypress', runEvent);
+
+// itemInput.addEventListener('focus', runEvent);
+// itemInput.addEventListener('blur', runEvent);
+
+// itemInput.addEventListener('cut', runEvent);
+// itemInput.addEventListener('paste', runEvent);
+
+// itemInput.addEventListener('input', runEvent);
+
+// select.addEventListener('change', runEvent);
+// select.addEventListener('input', runEvent);
+
+form.addEventListener('submit', runEvent);
+
+function runEvent(e){
+  e.preventDefault();
+  console.log('EVENT TYPE: '+e.type);
+
+  //console.log(e.target.value);
+  // document.getElementById('output').innerHTML = '<h3>'+e.target.value+'</h3>';
+
+  // output.innerHTML = '<h3>MouseX: '+e.offsetX+' </h3><h3>MouseY: '+e.offsetY+'</h3>';
+
+  // document.body.style.backgroundColor = "rgb("+e.offsetX+","+e.offsetY+", 40)";
 }
-
-
