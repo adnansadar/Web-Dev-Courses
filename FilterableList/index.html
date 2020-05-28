@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
-    <!--Fill This Later on-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>My Contacts </title>
 </head>
 
@@ -63,30 +62,7 @@
             </li>
         </ul>
     </div>
-    <script>
-        //Get input element
-        let filterInput = document.getElementById('filterInput');
-        //Add event listener
-        filterInput.addEventListener('keyup', filterNames);
-
-        function filterNames() {
-            //Get value of input
-            let filtervalue = document.getElementById('filterInput').value.toUpperCase();
-
-            //Get names ul
-            let ul = document.getElementById('names');
-
-            //Get lis from ul
-            let li = ul.querySelectorAll(
-            'li.collection-item'); //querySelector can be used to access class unlike getElementById
-
-            //Loop through collection-item lis
-            for (let i = 0; i < li.length; i++) {
-                const element = array[i];
-
-            }
-        }
-    </script>
+    <script src="app.js"></script>
 </body>
 
 </html>
