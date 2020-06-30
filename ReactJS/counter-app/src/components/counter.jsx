@@ -1,36 +1,67 @@
+//JSX, Rendering Lists, Conditional Rendering, Handling Events, Updating the State.
 import React, { Component } from "react";
 
 class Counter extends Component {
   //state is a property of React Component, its an object that includes any data the component needs
   state = {
-    count: 1,
-    tags: ["tag1", "tag2", "tag3"],
+    // count: 0,
+    // tags: [],
+    value: this.props.value, //props sets the value to whatever its been set from the code
+    //props takes in the value and selected from the render method in counter
+  };
+
+  // renderTags() {
+  //   if (this.state.tags.length === 0) return <p>There are no tags!</p>;
+  //   return (
+  //     <ul>
+  //       {this.state.tags.map((tag) => (
+  //         <li key={tag}>{tag}</li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
+
+  handleIncrement = () => {
+    //setState needs to be used with React as is not aware of the change. React then schedules an asynchronous(not defined when exactly) call to render method
+    this.setState({ value: this.state.value + 1 });
+    // console.log("Increment clicked!", this);
   };
 
   render() {
-    //React.Fragment is a child of React, it is used instead of div to remove multiple div
+    //React.Fragment is a child of React, it can be used instead of div to remove multiple div
     return (
-      <React.Fragment>
+      <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button className="btn btn-secondary btn-sm ">Increment</button>
-        <ul>
+        {/* to pass an argument through the onClick()
+        onClick={()=>this.handleIncrement(product)} */}
+        <button
+          onClick={this.handleIncrement}
+          className="btn btn-secondary btn-sm "
+        >
+          Increment
+        </button>
+        {/* <ul>
           {this.state.tags.map((tag) => (
             <li key={tag}>{tag}</li>
           ))}
-        </ul>
-      </React.Fragment>
+        </ul> */}
+        {/* {this.state.tags.length === 0 && "Please create a new tag!"} */}
+        {/* checks the first condition, then moves to the 2nd which is a non empty string i.e. its true and then returns it.
+        In terms of nos, any non zero no is taken as true. The last value in the AND condition will be returned */}
+        {/* {this.renderTags()} */}
+      </div>
     );
   }
 
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
-    classes += this.state.count === 0 ? "warning" : "primary";
+    classes += this.state.value === 0 ? "warning" : "primary";
     return classes;
   }
 
   formatCount() {
-    const { count } = this.state;
-    return count === 0 ? "Zero" : count;
+    const { value } = this.state;
+    return value === 0 ? "Zero" : value;
   }
 }
 
