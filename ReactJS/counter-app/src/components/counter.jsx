@@ -3,11 +3,12 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   //state is a property of React Component, its an object that includes any data the component needs
+  // state is local and props is global, but it is used as read only
   state = {
     // count: 0,
     // tags: [],
     value: this.props.value, //props sets the value to whatever its been set from the code
-    //props takes in the value and selected from the render method in counter
+    // components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
   };
 
   // renderTags() {
@@ -31,6 +32,7 @@ class Counter extends Component {
     //React.Fragment is a child of React, it can be used instead of div to remove multiple div
     return (
       <div>
+        {this.props.children}
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         {/* to pass an argument through the onClick()
         onClick={()=>this.handleIncrement(product)} */}
