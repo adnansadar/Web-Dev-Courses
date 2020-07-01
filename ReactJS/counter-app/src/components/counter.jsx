@@ -2,6 +2,16 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
+  //Used to decide if we want to make an AJAX call or no
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.counter.value !== this.props.counter.value) {
+    }
+  }
+
+  componentWillUnmount() {
+    console.log("Counter-Unmount");
+  }
+
   //Counter is a React component
   //state is a property of React Component, its an object that includes any data the component needs
   // state is local and props is global, but it is used as read only
