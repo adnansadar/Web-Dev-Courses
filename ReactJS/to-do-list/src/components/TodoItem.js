@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 export class TodoItem extends Component {
+  //CSS
   getStyle = () => {
     return {
       background: "#f4f4f4",
@@ -42,6 +43,7 @@ TodoItem.propTypes = {
   delTodo: PropTypes.func.isRequired,
 };
 
+//CSS
 const btnStyle = {
   background: "#ff0000",
   color: "#fff",
