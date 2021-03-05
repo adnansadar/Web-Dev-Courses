@@ -38,7 +38,7 @@ const Search = () => {
         clearTimeout(timeoutID);
       };
     }
-  }, [term]);
+  }, [term, results.length]);
 
   const renderedList = results.map((result) => {
     return (
